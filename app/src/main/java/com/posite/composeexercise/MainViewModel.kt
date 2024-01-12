@@ -8,10 +8,17 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor() : ViewModel() {
-    private val _data = mutableStateOf("Hello")
-    val data: State<String> = _data
+    private val _height = mutableStateOf("")
+    val height: State<String> = _height
 
-    fun changeData() {
-        _data.value = "World!"
+    private val _weight = mutableStateOf("")
+    val weight: State<String> = _weight
+
+    fun setHeight(height: String) {
+        _height.value = height
+    }
+
+    fun setWeight(weight: String) {
+        _weight.value = weight
     }
 }
